@@ -47,11 +47,11 @@ const SignUp: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          name: Yup.string().required('Nome obrigatorio'),
+          name: Yup.string().required('Nome obrigatório'),
           email: Yup.string()
-            .required('Email obrigatorio')
+            .required('Email obrigatório')
             .email('Digite um e-mail valido'),
-          password: Yup.string().min(6, 'Minimo de 6 digitos'),
+          password: Yup.string().min(6, 'Minimo de 6 dígitos'),
         });
 
         await schema.validate(data, {
@@ -62,7 +62,7 @@ const SignUp: React.FC = () => {
 
         Alert.alert(
           'Cadastro realizado com sucesso!',
-          'Voce ja pode fazer login na aplicacao.',
+          'Voce ja pode fazer login na aplicação.',
         );
 
         navigation.goBack();
